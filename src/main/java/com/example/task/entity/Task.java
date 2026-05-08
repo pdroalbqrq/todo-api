@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.task.entity;
 
 public class Task {
 
@@ -6,12 +6,14 @@ public class Task {
     private String title;
     private String description;
     private boolean done;
+    private Long userId;
 
-    public Task(Long id, String title, String description) {
+    public Task(Long id, String title, String description, Long userId) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.done = false;  // Por padrão, tarefa começa não concluída
+        this.done = false;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -45,6 +47,10 @@ public class Task {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public Long getUserId() { return userId; }
+
+    public void setUserId(Long userId) { this.userId = userId; }
 
     @Override
     public String toString() {
